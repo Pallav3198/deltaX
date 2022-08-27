@@ -1,0 +1,28 @@
+{
+  "posts": [
+    {
+      "songName": "Sample Song",
+      "releaseDate": "2022-08-03",
+      "artwork": "C:\\fakepath\\Madhu_Raj_CV_Updated.pdf",
+      "artistDOB": "",
+      "id": 1
+    },
+    {
+      "songName": "",
+      "releaseDate": "",
+      "artwork": "",
+      "artistDOB": "",
+      "id": 2
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

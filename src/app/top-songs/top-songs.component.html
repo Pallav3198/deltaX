@@ -1,0 +1,32 @@
+<div class="container-fluid">
+    <!--ADD SONG SECTION-->
+    <div class="top_bar navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand">
+           Top 10 Songs
+          </a>
+            <app-add-song></app-add-song>
+        </div>
+    </div>
+    <!--TABLE SECTION-->
+    <table class="table table-striped mt-3 text-center">
+        <thead>
+            <tr>
+                <th scope="col">Artwork</th>
+                <th scope="col">Song</th>
+                <th scope="col">Date of Release</th>
+                <th scope="col">Artists</th>
+                <th scope="col">Ratings</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of SongsData">
+                <td>{{item.artwork}}</td>
+                <td>{{item.song_date}}</td>
+                <td>{{item.song}}</td>
+                <td>{{item.artist}}</td>
+                <td>{{item.Ratings}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

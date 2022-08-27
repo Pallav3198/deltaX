@@ -1,0 +1,93 @@
+
+<button class="btn btn-outline-secondary btn_custom" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">
+  <i class="fa-light fa-plus"></i>
+  Add Song
+</button> 
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Add Song</h5>
+        </div>
+        <!--progress bar-->
+        <div class="progress" style="height: 4px;">
+          <div class="progress-bar" role="progressbar" style="width:70%" aria-valuenow="progress_value"  aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+        <div class="modal-body">
+         <!--   M O D A L    B O D Y    M A I N -->
+            <form [formGroup]="formValue">
+              <div *ngIf="step==1">
+                  <div class="form-group">
+                      <label for="songName">Song Name</label>
+                      <input type="text" class="form-control" id="song_name"  placeholder="Song Name" formControlName="songName">
+                  </div>
+
+                  <div class="form-group">
+                      <label for="songName">Date Released</label>
+                      <input type="date" class="form-control" id="song_name"  placeholder="Date Released" formControlName="releaseDate">
+                  </div>
+
+                  <div class="form-group">
+                      <label for="upload_artwork">Upload Artwork</label>
+                      <input type="file" class="form-control form-control-file" id="exampleFormControlFile1" formControlName="artwork">
+                  </div>
+              </div>
+                <!--ARTIST SECTION-->
+                <div *ngIf="step==2">
+                  <div class="form-group">
+                      <label for="Add Artist">Add Artist</label>
+                      <div>
+                          <angular2-multiselect #ele [data]="dropdownList" [(ngModel)]="selectedItems" [ngModelOptions]="{standalone: true}" [settings]="dropdownSettings" (onSelect)="onItemSelect($event)" (onDeSelect)="OnItemDeSelect($event)"(onSelectAll)="onSelectAll($event)"(onDeSelectAll)="onDeSelectAll($event)">
+                            <c-item>
+                                <ng-template let-item="item">
+                                    <label style="color: #333;min-width: 150px;">{{item.itemName}}</label>
+                                </ng-template>
+                            </c-item>
+                            <c-badge>
+                                <ng-template let-item="item">
+                                  <label style="margin: 0px;">{{item.itemName}}</label>
+                                </ng-template>
+                            </c-badge>      
+                          </angular2-multiselect>
+                            <!--add new artist button-->
+                          <button class="btn btn-secondary" (click)="enable_new_artist(add_new_artist)">Add new artist</button>
+                        </div>
+                  </div>
+                  <!--ADD NEW ARTIST-->
+                  <div #add_new_artist class="form-group add_artist">
+                    <label for="Add Artist">Add new artist</label>
+                    <input type="input" class="form-control" id="artist_name"  placeholder="Artist Name" formControlName="artistName">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="Add Artist">Date of Birth</label>
+                    <input type="date" class="form-control" id="artist_dob"  placeholder="Artist Date of Birth" formControlName="artistDOB">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="bio">Enter Bio</label>
+                  <textarea cols="10" rows="2" class="form-control" formControlName="bio">
+
+                  </textarea>
+                  </div>
+              </div>
+              <div *ngIf="step==3">
+                <div class="form-group">
+                  <label for="songName">Are You Sure to Submit?</label>
+                  <button type="submit" class="form-control btn btn-outline-primary" (click)="postDetails()" data-bs-dismiss="modal">Submit</button>
+                  <button type="submit" class="form-control btn btn-outline-warning mt-4" data-bs-dismiss="modal">Cancel Submission</button>
+              </div>
+              </div>
+            </form>
+            <!---  - - - - - - - - - - - - - - - - -  -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-outline-primary" #ele_next (click)="update_step_inc(ele_next)" (click)="progress_value = 25">Next</button>
+          <button type="button" class="btn btn-outline-primary" #ele_prev (click)="update_step_dec(ele_prev)">Previous</button>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,85 @@
+.main{
+    margin:0;
+    padding:0;
+}
+.navbar{
+    margin: 0;
+}
+nav{
+    margin:2px;
+    padding:10px;
+    font-size: 20px;
+    word-spacing: 4px;
+}
+nav .navbar-brand{
+    font-size: 30px;
+    letter-spacing: 1px;
+    font-family:'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', 'sans-serif';
+    color: #ffa526;
+    font-weight: 300;
+
+}
+nav .navbar-brand:hover{
+    color: #fa9a11;
+    font-weight: 330;
+}
+nav .nav_items{
+    padding-left:20px;
+}
+nav .nav_items .nav-item{
+    margin-right:20px;
+}
+nav .nav_items .nav-item .nav-link{
+   color: #ffa526;
+   margin-left:850px;
+}
+.hide{
+    display:none;
+}
+.nav-tabs{
+    border-bottom: 4px solid #f7ae48 ;
+    
+}
+.nav-tabs .nav-item{
+    width: 15%;
+    text-align: center;
+}
+.nav-tabs .nav-item .nav-link{
+     color: #ffa526;
+}
+.nav-tabs .nav-item .active{
+    background-color: #ffa526;
+    border-bottom:none;
+    color: black;
+}
+.custom_search{
+    background-color:#ffa526;
+    padding:none;
+    margin:none;
+    color:black;
+    border:none;
+}
+footer{
+    border-top: 4px solid #f7ae48 ;
+    color:#edebeb;
+    word-spacing: 4px;
+}
+.main_footer{
+    width:100%;
+    height:100%;
+    padding:0;
+    margin:0;
+}
+.fa-heart{
+    color:red;
+}
+.social{
+    padding-top:10px;
+}
+
+.social .fa-brands{
+    color: #ffa526;
+    font-size: 30px;
+    margin-left:40px;
+    margin-right:40px;
+}

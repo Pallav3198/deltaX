@@ -1,0 +1,22 @@
+.container-fluid{
+    padding:0;
+    margin:0;
+}
+.top_bar{
+    padding:20px;
+    margin: 0px;
+    border-bottom: 4px solid #f7ae48 ;
+}
+.navbar-brand{
+    color: #ffa526;
+    font-weight: bold;
+    text-shadow: 0 0 1px black, 0 0 1px black;
+}
+.top_bar .navbar-brand{
+    font-size: 30px;
+    font-family:'Times New Roman';
+
+}
+table{
+    min-height: 400px;
+}

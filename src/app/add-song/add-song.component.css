@@ -1,0 +1,12 @@
+.btn_custom{
+    background-color: #ffa526;
+    border:none;
+    color: black;
+    padding:10px;
+}
+.modal_custom{
+    padding:40px;
+}
+.progress-bar{
+    background-color: #ffa526;
+}

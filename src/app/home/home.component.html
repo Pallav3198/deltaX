@@ -1,0 +1,65 @@
+<div class="main container-fluid">
+<!--NAVBAR-->
+<nav class="navbar navbar-expand-lg bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand">Songify<i class="fa-solid fa-music"></i></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="nav_items navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="user">
+              <i class="fa-solid fa-user" routerLink="user" #login_ele></i>
+              Login
+            </a>
+          </li>
+        </ul>
+        <form class=" search_section d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success custom_search" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+      </div>
+    </div>
+  </nav>
+<!--TABS-->
+<ul class="nav nav-tabs bg-dark">
+    <li class="nav-item">
+      <a class="nav-link" #homeEle aria-current="page" (click) = "loadContent(homeEle)" [ngClass]="{'active': flag===1}">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" #topSongsEle (click) = "loadContent(topSongsEle)" [ngClass]="{'active': flag===2}">Top Songs</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link"  #topArtistsEle  routerLink="top-artists" (click) = "loadContent(topArtistsEle)" [ngClass]="{'active': flag===3}">Top Artists</a>
+    </li>
+  </ul>
+<!--MAIN SECTION-->
+<div class="main_section">
+  <div class="main_content" *ngIf="content==1">
+    <app-carousal></app-carousal>
+  </div>
+  <div class="main_content" *ngIf="content==2">
+    <app-top-songs></app-top-songs>
+  </div>
+  <div class="main_content" *ngIf="content==3">
+    <app-top-artists></app-top-artists>
+  </div>
+</div>
+
+<!--FOOTER-->
+<footer class="bg-dark text-center text-lg-start">
+  <!-- Copyright -->
+  <div class=" main_footer text-center p-3">
+    <h6>© 2022 DeltaX Bangalore</h6>
+    <p>
+      Made with <i class="fa-solid fa-heart"></i> by <b>Pallav Kumar</b>
+    </p>
+    <h6 class="social">
+      <i class="fa-brands fa-linkedin"></i>
+      <i class="fa-brands fa-facebook"></i>
+      <i class="fa-brands fa-github"></i>
+    </h6>
+  </div>
+</footer>
+</div>
