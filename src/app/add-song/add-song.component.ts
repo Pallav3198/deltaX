@@ -112,4 +112,7 @@ export class AddSongComponent implements OnInit {
         console.log(ele);
       }
       
+      updateProgressBar(){
+        if()
+      }
 }
